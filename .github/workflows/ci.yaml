@@ -12,11 +12,10 @@ jobs:
     
     steps:
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
+    - name: Set up Python
+      uses: actions/setup-python@v3
       with:
-        java-version: '17'
-        distribution: 'zulu'
+        python-version: '3.13.1'
 
     - name: Show Python version
       run: "python3 -–version"
