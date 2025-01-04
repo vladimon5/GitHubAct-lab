@@ -20,18 +20,11 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.10.16'
+        python-version: '3.10'
 
     - name: Show Python version
       run: 'python3 --version'
-    - name: Debugging - List Python versions and paths 
-      run: | 
-        'which python' 
-        'which python3'
-        'python --version' 
-        'python3 --version'
-        'echo $PATH'
-      
+          
     - name: Show directory
       run: 'pwd'
 
@@ -40,8 +33,8 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        'python3 -m pip install --upgrade pip'
-        'python3 -m pip install -r requirements.txt'
+         python3 -m pip install --upgrade pip
+         python3 -m pip install -r requirements.txt
 
     - name: Build application
       run: 'python3 app.py'
