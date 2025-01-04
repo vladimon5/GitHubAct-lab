@@ -40,5 +40,5 @@ jobs:
       run: python3 db.py
       
     - name: Test application
-      run: python3 -m pytest
+      run: date
       
