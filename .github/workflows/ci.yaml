@@ -24,6 +24,13 @@ jobs:
 
     - name: Show Python version
       run: 'python3 --version'
+    - name: Debugging - List Python versions and paths 
+      run: | 
+        'which python' 
+        'which python3'
+        'python --version' 
+        'python3 --version'
+        'echo $PATH'
       
     - name: Show directory
       run: 'pwd'
