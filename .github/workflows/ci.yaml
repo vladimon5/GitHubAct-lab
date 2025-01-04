@@ -18,11 +18,11 @@ jobs:
         java-version: '17'
         distribution: 'zulu'
 
-    - name: Show Java version
-      run: "java -version"
+    - name: Show Python version
+      run: "python3 –version"
       
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       with:
         ref: stage
 
@@ -33,10 +33,12 @@ jobs:
       run: 'ls -al'
 
     - name: Install Dependencies
-      run: 'mvn compile'
+      run: | 
+        'python -m pip install --upgrade pip' 
+        'pip install -r requirements.txt'
 
     - name: Build application
-      run: 'mvn package -DskipTests'
+      run: 'python app.py'
 
     - name: Test application
-      run: 'mvn test'
+      
