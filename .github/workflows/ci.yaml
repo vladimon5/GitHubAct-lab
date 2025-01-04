@@ -33,7 +33,7 @@ jobs:
 
     - name: Install Dependencies
       run: | 
-        '${{ runner.tool_cache }}/Python/3.10.16/x64/bin/python3 -m pip install --upgrade pip'
+        'pip3 install --upgrade pip'
         'python3 -m pip install -r requirements.txt'
 
     - name: Build application
