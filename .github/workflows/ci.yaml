@@ -20,7 +20,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
-        python-version: '3.10'
+        python-version: '3.10.16'
 
     - name: Show Python version
       run: python3 --version
@@ -37,8 +37,8 @@ jobs:
          python3 -m pip install -r requirements.txt
 
     - name: Build application
-      run: python setup.py sdist bdist_wheel
-
+      run: python3 db.py
+      
     - name: Test application
       run: python3 -m pytest
       
