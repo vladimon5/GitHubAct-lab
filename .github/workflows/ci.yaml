@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: stage
 
     - name: Set up Python
       uses: actions/setup-python@v3
@@ -18,13 +23,8 @@ jobs:
         python-version: '3.13.1'
 
     - name: Show Python version
-      run: "python3 ––version"
+      run: "python3 --version"
       
-    - name: Checkout code
-      uses: actions/checkout@v3
-      with:
-        ref: stage
-
     - name: Show directory
       run: 'pwd'
 
