@@ -18,7 +18,7 @@ jobs:
         python-version: '3.13.1'
 
     - name: Show Python version
-      run: "python3 -–version"
+      run: "python3 ––version"
       
     - name: Checkout code
       uses: actions/checkout@v3
