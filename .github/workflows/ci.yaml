@@ -23,7 +23,7 @@ jobs:
         python-version: '3.10.16'
 
     - name: Show Python version
-      run: '${{ runner.tool_cache }}/Python/3.10.16/x64/bin/python3 --version'
+      run: '${{ env.pythonLocation }}/bin/python --version'
       
     - name: Show directory
       run: 'pwd'
@@ -33,12 +33,12 @@ jobs:
 
     - name: Install Dependencies
       run: | 
-        'pip3 install --upgrade pip'
-        'python3 -m pip install -r requirements.txt'
+        '${{ env.pythonLocation }}/bin/python -m pip install --upgrade pip'
+        '${{ env.pythonLocation }}/bin/python -m pip install -r requirements.txt'
 
     - name: Build application
-      run: 'python3 app.py'
+      run: '${{ env.pythonLocation }}/bin/python app.py'
 
     - name: Test application
-      run: 'python3 -m pytest'
+      run: '${{ env.pythonLocation }}/bin/python -m pytest'
       
