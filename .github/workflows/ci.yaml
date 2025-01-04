@@ -23,7 +23,7 @@ jobs:
         python-version: '3.10'
 
     - name: Show Python version
-      run: 'python3 --version'
+      run: python3 --version
           
     - name: Show directory
       run: 'pwd'
@@ -37,8 +37,8 @@ jobs:
          python3 -m pip install -r requirements.txt
 
     - name: Build application
-      run: 'python3 app.py'
+      run: python setup.py sdist bdist_wheel
 
     - name: Test application
-      run: 'python3 -m pytest'
+      run: python3 -m pytest
       
